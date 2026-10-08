@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="calculadora">
+        <h1>Calculadora</h1>
+        <input type="number" id="InputNumero01" placeholder="Primeiro número">
+        <input type="number" id="InputNumero02" placeholder="Segundo número">
+        <div class="botoes">
+            <button class="somar" onclick="Somar()">Somar</button>
+            <button class="subtrair" onclick="Subtrair()">Subtrair</button>
+            <button class="multiplicar" onclick="Multiplicar()">Multiplicar</button>
+            <button class="dividir" onclick="Dividir()">Dividir</button>
+        </div>
+
+        <h2>Resultado:</h2>
+        <p id="exibirresultado">0</p>
+
+    </div>
+
+    <script>
+        function Somar() {
+            let Numero01 = parseFloat(document.getElementById("InputNumero01").value);
+            let Numero02 = parseFloat(document.getElementById("InputNumero02").value);
+            let resultado = Numero01 + Numero02;
+
+            document.getElementById("exibirresultado").innerHTML = resultado;
+        }
+
+        function Subtrair() {
+            let Numero01 = parseFloat(document.getElementById("InputNumero01").value);
+            let Numero02 = parseFloat(document.getElementById("InputNumero02").value);
+            let resultado = Numero01 - Numero02;
+            document.getElementById("exibirresultado").innerHTML = resultado;
+        }
+
+        function Multiplicar() {
+            let Numero01 = parseFloat(document.getElementById("InputNumero01").value);
+            let Numero02 = parseFloat(document.getElementById("InputNumero02").value);
+            let resultado = Numero01 * Numero02;
+            document.getElementById("exibirresultado").innerHTML = resultado;
+        }
+
+        function Dividir() {
+            let Numero01 = parseFloat(document.getElementById("InputNumero01").value);
+            let Numero02 = parseFloat(document.getElementById("InputNumero02").value);
+            if (Numero02 == 0) {
+                document.getElementById("exibirresultado").innerHTML = "Não pode dividir por 0";
+
+            } else {
+
+                let resultado = Numero01 / Numero02;
+                document.getElementById("exibirresultado").innerHTML = resultado;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
